@@ -30,9 +30,11 @@ $router->get('sua-dm/{id}', [App\Controllers\CategoryController::class, 'dmEditF
 $router->post('sua-dm/{id}', [App\Controllers\CategoryController::class, 'saveEditdm']);
 $router->get('xoa-dm/{id}', [App\Controllers\CategoryController::class, 'removeDm']);
 
+
 $router->get('lst-pro',[App\Controllers\HomeController::class,'list_promp']);
 $router->get('lst-cate',[App\Controllers\HomeController::class,'list_promp']);
 $router->get('detailpro/{id}', [App\Controllers\HomeController::class, 'detail_promp']);
+$router->get('dmsp/{id}', [App\Controllers\HomeController::class, 'dmsp']);
 // $router->get('listcatepro/{id}', [App\Controllers\HomeController::class, 'list_procatemp']);
 
 

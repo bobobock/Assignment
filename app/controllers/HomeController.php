@@ -12,16 +12,12 @@ class HomeController extends BaseController{
 
     public function index(){
         $this-> render('layouts.userpage');
+        $this->render('userpage.home');
     }
 
     public function list_promp(){
-        $keyword = isset($_GET['keyword']) ? trim($_GET['keyword']) : "";
-        if(empty($keyword)){
             $products = Product::all();
             $categories = Category::all();
-        }else{
-            $products = Product::where('name', 'like', "%$keyword%")->get();
-        }
         return $this->render('userpage.list-all', compact('keyword', 'products','categories'));
     }
 
@@ -29,6 +25,12 @@ class HomeController extends BaseController{
         $categories= Category::all();
         $product = Product::find($id);
         return $this->render('userpage.detail-pro', compact('product','categories'));
+    }
+
+    public function dmsp($id){
+        $categories= Category::all();
+        $products = Product::where('category_id', '=', "$id")->get();
+        return $this->render('userpage.list-all', compact('products','categories'));
     }
 
 

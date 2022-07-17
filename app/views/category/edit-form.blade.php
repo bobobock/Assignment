@@ -12,7 +12,7 @@
                     <form method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="">Name</label>
-                        <input type="text" name="name" class="form-control" value="<?= $categories->name ?>">
+                        <input type="text" name="name" class="form-control" value="<?= $category->name ?>">
                         @if(isset($_GET['nameerr']))
                             <span class="text-danger">{{$_GET['nameerr']}}</span>
                         @endif

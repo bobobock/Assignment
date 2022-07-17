@@ -26,7 +26,7 @@
 @section('aside')                
     @foreach($categories as $c)
         <div>
-            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#">{{$c->name}}</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{{BASE_URL .'dmsp/'}}{{$c->id}}">{{$c->name}}</a>
         </div>
     @endforeach
 @endsection
